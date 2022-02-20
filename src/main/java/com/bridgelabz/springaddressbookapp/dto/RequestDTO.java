@@ -61,6 +61,4 @@ public class RequestDTO {
 		this.state = state;
 		this.zip = zip;
 	}
-	
-	
 }

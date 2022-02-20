@@ -19,7 +19,6 @@ import com.bridgelabz.springaddressbookapp.service.AddressbookAppService;
 @RequestMapping("/contactbook")
 public class AddressbookController {
 	
-	
 	@Autowired
 	AddressbookAppService service;
 	
