@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
+
 @Entity
 public class ContactDetails {
 	@Id
@@ -28,6 +30,17 @@ public class ContactDetails {
 		this.state = contact.getCity();
 		this.zip = contact.getZip();
 	}
+	
+	public ContactDetails(RequestDTO dto) {
+		this.firstName = dto.getFirstName();
+		this.lastName = dto.getLastName();
+		this.email = dto.getEmail();
+		this.phoneNumber = dto.getPhoneNumber();
+		this.city = dto.getCity();
+		this.state = dto.getCity();
+		this.zip = dto.getZip();
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -107,7 +120,7 @@ public class ContactDetails {
 		this.zip = zip;
 	}
 	
-	public ContactDetails() {
+	public ContactDetails(Integer id, RequestDTO dto) {
 		super();
 	}
 	public ContactDetails(Integer id, ContactDetails contact) {
@@ -121,4 +134,3 @@ public class ContactDetails {
 		this.zip = contact.getZip();
 	}
 }
-

@@ -12,13 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
-import com.bridgelabz.springaddressbookapp.repository.AddressbookRepository;
+import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
+import com.bridgelabz.springaddressbookapp.service.AddressbookAppService;
 
 @RestController
 @RequestMapping("/contactbook")
 public class AddressbookController {
+	
+	
 	@Autowired
-	AddressbookRepository repo;
+	AddressbookAppService service;
 	
 	@GetMapping("")
 	public String welcomeUser() {
@@ -26,28 +29,26 @@ public class AddressbookController {
 	}
 	
 	@PostMapping("/post")
-	public ResponseEntity<ContactDetails> postData(@RequestBody ContactDetails contact) {
-		ContactDetails newContact = new ContactDetails(contact);
-		repo.save(newContact);
+	public ResponseEntity<ContactDetails> postData(@RequestBody RequestDTO dto) {
+		ContactDetails newContact = service.saveDataInDB(dto);
 		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
 	}
 	
 	@GetMapping("/get/{id}")
-	public ResponseEntity<ContactDetails> retriveData(@PathVariable Integer id, @RequestBody ContactDetails contact){
-		ContactDetails newContact = repo.getById(id);
+	public ResponseEntity<ContactDetails> retriveData(@PathVariable Integer id){
+		ContactDetails newContact = service.findContactById(id);
 		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
 	}
 	
 	@PutMapping("/put/{id}")
-	public ResponseEntity<ContactDetails> updateById(@PathVariable Integer id, @RequestBody ContactDetails contact){
-		ContactDetails newContact = new ContactDetails(id, contact);
-		repo.save(newContact);
+	public ResponseEntity<ContactDetails> updateById(@PathVariable Integer id, @RequestBody RequestDTO dto){
+		ContactDetails newContact = service.updateDateById(id,dto);
 		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
 	}
 	
 	@GetMapping("/delete/{id}")
-	public ResponseEntity<String> deleteDataById(@PathVariable Integer Id){
-		repo.deleteById(Id);
+	public ResponseEntity<String> deleteDataById(@PathVariable Integer id){
+		service.deleteContact(id);
 		return new ResponseEntity<String>("Contact deleted succesfully",HttpStatus.OK);
 	}
 }
