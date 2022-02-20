@@ -9,5 +9,4 @@ public class SpringaddressbookappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringaddressbookappApplication.class, args);
 	}
-
 }
