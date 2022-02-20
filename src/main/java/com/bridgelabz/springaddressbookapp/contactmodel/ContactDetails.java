@@ -8,6 +8,9 @@ import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
 
 @Entity
 public class ContactDetails {
+	
+	
+	
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -19,6 +22,12 @@ public class ContactDetails {
 	private String state;
 	private Integer zip;
 	
+	@Override
+	public String toString() {
+		return "ContactDetails [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phoneNumber=" + phoneNumber + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+	}
+
 	public ContactDetails(ContactDetails contact) {
 		super();
 		this.id = contact.getId();
@@ -40,7 +49,9 @@ public class ContactDetails {
 		this.state = dto.getCity();
 		this.zip = dto.getZip();
 	}
-	
+	public ContactDetails() {
+		super();
+	}
 	public Integer getId() {
 		return id;
 	}

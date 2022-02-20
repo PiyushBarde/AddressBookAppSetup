@@ -1,11 +1,15 @@
 package com.bridgelabz.springaddressbookapp.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
 import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
 import com.bridgelabz.springaddressbookapp.repository.AddressbookRepository;
 
+
+@Service
 public class AddressbookAppService {
 	
 	@Autowired
@@ -17,9 +21,9 @@ public class AddressbookAppService {
 		return newContact;
 	}
 
-	public ContactDetails findContactById(Integer id) {
-		ContactDetails contact = repo.getById(id);
-		return contact;
+	public ContactDetails getContactById(Integer id) {
+		ContactDetails newContactDetails = repo.getById(id);
+		return newContactDetails;
 	}
 
 	public ContactDetails updateDateById(Integer id, RequestDTO dto) {

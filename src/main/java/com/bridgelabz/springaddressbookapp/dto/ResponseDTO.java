@@ -1,13 +1,33 @@
 package com.bridgelabz.springaddressbookapp.dto;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
 
+/**
+ * @author Piyush
+ *
+ */
 public class ResponseDTO {
-	@Autowired
-	ContactDetails contact;
 	
 	private String message;
-	private ContactDetails content;
+	private ContactDetails contact;
+	public ResponseDTO(String message,ContactDetails contact) {
+		super();
+		this.contact = contact;
+		this.message = message;
+	}
+	
+	public ContactDetails getContact() {
+		return contact;
+	}
+	public void setContact(ContactDetails contact) {
+		this.contact = contact;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 }

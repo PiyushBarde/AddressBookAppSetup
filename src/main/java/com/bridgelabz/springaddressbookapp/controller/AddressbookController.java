@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
 import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
+import com.bridgelabz.springaddressbookapp.dto.ResponseDTO;
 import com.bridgelabz.springaddressbookapp.service.AddressbookAppService;
 
 @RestController
@@ -28,21 +29,23 @@ public class AddressbookController {
 	}
 	
 	@PostMapping("/post")
-	public ResponseEntity<ContactDetails> postData(@RequestBody RequestDTO dto) {
+	public ResponseEntity<ResponseDTO> postData(@RequestBody RequestDTO dto) {
 		ContactDetails newContact = service.saveDataInDB(dto);
-		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
+		ResponseDTO response = new ResponseDTO("New Contact Added in Addressbook : ", newContact);
+		return new ResponseEntity<ResponseDTO>(response,HttpStatus.OK);
 	}
 	
 	@GetMapping("/get/{id}")
-	public ResponseEntity<ContactDetails> retriveData(@PathVariable Integer id){
-		ContactDetails newContact = service.findContactById(id);
-		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
+	public ResponseEntity<String> retriveData(@PathVariable Integer id){
+		ContactDetails newContact = service.getContactById(id);
+		return new ResponseEntity<String>(newContact.toString(),HttpStatus.OK);
 	}
 	
 	@PutMapping("/put/{id}")
-	public ResponseEntity<ContactDetails> updateById(@PathVariable Integer id, @RequestBody RequestDTO dto){
+	public ResponseEntity<ResponseDTO> updateById(@PathVariable Integer id, @RequestBody RequestDTO dto){
 		ContactDetails newContact = service.updateDateById(id,dto);
-		return new ResponseEntity<ContactDetails>(newContact,HttpStatus.OK);
+		ResponseDTO response = new ResponseDTO("Contact in Addressbook : ", newContact);
+		return new ResponseEntity<ResponseDTO>(response,HttpStatus.OK);
 	}
 	
 	@GetMapping("/delete/{id}")
