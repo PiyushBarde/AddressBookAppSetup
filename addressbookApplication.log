@@ -33,3 +33,7 @@
 2022-02-22 19:24:40.229  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Starting SpringaddressbookappApplication using Java 11.0.14 on LAPTOP-GLO85PV8 with PID 7856 (C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp\target\classes started by Piyush in C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp)
 2022-02-22 19:24:40.230 DEBUG 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Running with Spring Boot v2.6.3, Spring v5.3.15
 2022-02-22 19:24:40.232  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : No active profile set, falling back to default profiles: default
+2022-02-22 19:24:42.855  WARN 7856 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-22 19:24:43.052  WARN 7856 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-22 19:24:43.164  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Started SpringaddressbookappApplication in 3.276 seconds (JVM running for 4.13)
+2022-02-22 19:24:43.167  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Addressbook App started
