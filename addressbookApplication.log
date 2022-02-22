@@ -1,0 +1,35 @@
+2022-02-22 19:22:23.654  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Starting SpringaddressbookappApplication using Java 11.0.14 on LAPTOP-GLO85PV8 with PID 7944 (C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp\target\classes started by Piyush in C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp)
+2022-02-22 19:22:23.654  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : No active profile set, falling back to default profiles: default
+2022-02-22 19:22:23.763  INFO 7944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-22 19:22:23.779  INFO 7944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interfaces.
+2022-02-22 19:22:23.829  INFO 7944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-22 19:22:23.830  INFO 7944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-22 19:22:23.830  INFO 7944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-22 19:22:23.841  INFO 7944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-22 19:22:23.842  INFO 7944 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 186 ms
+2022-02-22 19:22:23.862  INFO 7944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-22 19:22:23.866  INFO 7944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2022-02-22 19:22:23.883  INFO 7944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2022-02-22 19:22:23.883  INFO 7944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-22 19:22:23.914  INFO 7944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-22 19:22:23.914  INFO 7944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-22 19:22:23.953  WARN 7944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-22 19:22:23.992  WARN 7944 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-22 19:22:24.012  INFO 7944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-22 19:22:24.019  INFO 7944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-22 19:22:24.025  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Started SpringaddressbookappApplication in 0.41 seconds (JVM running for 1604.921)
+2022-02-22 19:22:24.026  INFO 7944 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-22 19:22:24.026  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Addressbook App started
+2022-02-22 19:23:54.234  INFO 7944 --- [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-22 19:23:54.235  INFO 7944 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2022-02-22 19:23:54.242  INFO 7944 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2022-02-22 19:23:54.295  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Starting SpringaddressbookappApplication using Java 11.0.14 on LAPTOP-GLO85PV8 with PID 7944 (C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp\target\classes started by Piyush in C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp)
+2022-02-22 19:23:54.296 DEBUG 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-22 19:23:54.296  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : No active profile set, falling back to default profiles: default
+2022-02-22 19:23:54.611  WARN 7944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-22 19:23:54.659  WARN 7944 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-22 19:23:54.696  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Started SpringaddressbookappApplication in 0.419 seconds (JVM running for 1695.592)
+2022-02-22 19:23:54.697  INFO 7944 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Addressbook App started
+2022-02-22 19:24:40.229  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Starting SpringaddressbookappApplication using Java 11.0.14 on LAPTOP-GLO85PV8 with PID 7856 (C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp\target\classes started by Piyush in C:\Users\Piyush\Desktop\Enterprise Different Workshop\AddressbookApp)
+2022-02-22 19:24:40.230 DEBUG 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-22 19:24:40.232  INFO 7856 --- [restartedMain] c.b.s.SpringaddressbookappApplication    : No active profile set, falling back to default profiles: default
