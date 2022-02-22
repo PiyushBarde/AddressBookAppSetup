@@ -15,12 +15,15 @@ import com.bridgelabz.springaddressbookapp.dto.ResponseDTO;
 
 @ControllerAdvice
 public class AddressbookAppExceptionalHandler {
+	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ResponseDTO> handlerMethodArgumentNotValidException(MethodArgumentNotValidException exception){
+		
 		List<ObjectError> errorList=exception.getBindingResult().getAllErrors();
 		List<String> errMesg = errorList.stream()
 							.map(objErr->objErr.getDefaultMessage())
 							.collect(Collectors.toList());
+		
 		ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST requests",errMesg);
 		return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.BAD_REQUEST);
 	}
