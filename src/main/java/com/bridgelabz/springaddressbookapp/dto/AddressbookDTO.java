@@ -1,6 +1,13 @@
 package com.bridgelabz.springaddressbookapp.dto;
 
-public class RequestDTO {
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+public class AddressbookDTO {
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -8,7 +15,7 @@ public class RequestDTO {
 	private String city;
 	private String state;
 	private Integer zip;
-	public String getFirstName() {
+/*	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
@@ -49,8 +56,8 @@ public class RequestDTO {
 	}
 	public void setZip(Integer zip) {
 		this.zip = zip;
-	}
-	public RequestDTO(String firstName, String lastName, String email, long phoneNumber, String city, String state,
+	}*/
+	public AddressbookDTO(String firstName, String lastName, String email, long phoneNumber, String city, String state,
 			Integer zip) {
 		super();
 		this.firstName = firstName;
@@ -60,5 +67,8 @@ public class RequestDTO {
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
+	}
+	public AddressbookDTO() {
+		super();
 	}
 }

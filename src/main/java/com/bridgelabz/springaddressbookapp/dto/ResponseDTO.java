@@ -1,32 +1,22 @@
 package com.bridgelabz.springaddressbookapp.dto;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
-
-/**
- * @author Piyush
- *
- */
+@Data
+@Getter
+@Setter
 public class ResponseDTO {
 	
+	public ResponseDTO() {
+		super();
+	}
 	private String message;
-	private ContactDetails contact;
-	public ResponseDTO(String message,ContactDetails contact) {
+	private Object contact;
+	public ResponseDTO(String message,Object contact) {
 		super();
 		this.contact = contact;
-		this.message = message;
-	}
-	
-	public ContactDetails getContact() {
-		return contact;
-	}
-	public void setContact(ContactDetails contact) {
-		this.contact = contact;
-	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
 		this.message = message;
 	}
 	

@@ -1,11 +1,14 @@
 package com.bridgelabz.springaddressbookapp.service;
 
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bridgelabz.springaddressbookapp.contactmodel.ContactDetails;
-import com.bridgelabz.springaddressbookapp.dto.RequestDTO;
+import com.bridgelabz.springaddressbookapp.contactmodel.AddressbookModel;
+import com.bridgelabz.springaddressbookapp.dto.AddressbookDTO;
 import com.bridgelabz.springaddressbookapp.repository.AddressbookRepository;
 
 
@@ -15,19 +18,29 @@ public class AddressbookAppService {
 	@Autowired
 	AddressbookRepository repo;
 
-	public ContactDetails  saveDataInDB(RequestDTO dto) {
-		ContactDetails newContact = new ContactDetails(dto);
+	public AddressbookModel  saveDataInDB(AddressbookDTO dto) {
+		AddressbookModel newContact = new AddressbookModel(dto);
 		repo.save(newContact);
 		return newContact;
 	}
 
-	public ContactDetails getContactById(Integer id) {
-		ContactDetails newContactDetails = repo.getById(id);
-		return newContactDetails;
+	public List<AddressbookModel> getListOfContacts() {
+		List<AddressbookModel> allDataInAddressbook = repo.findAll();
+		return allDataInAddressbook;
+	}
+	
+	/*public AddressbookModel getContactById(Integer id) {
+		AddressbookModel newContact = repo.getById(id);
+		System.out.println(newContact);
+		return newContact;
+	}*/
+	
+	public Optional<AddressbookModel> getContactbyId(Integer id) {
+		return repo.findById(id);
 	}
 
-	public ContactDetails updateDateById(Integer id, RequestDTO dto) {
-		ContactDetails newContact = new ContactDetails(id,dto);
+	public AddressbookModel updateDateById(Integer id, AddressbookDTO dto) {
+		AddressbookModel newContact = new AddressbookModel(id,dto);
 		repo.save(newContact);
 		return newContact;
 	}
