@@ -1,9 +1,7 @@
 package com.bridgelabz.springaddressbookapp.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.bridgelabz.springaddressbookapp.contactmodel.AddressbookModel;
 import com.bridgelabz.springaddressbookapp.dto.AddressbookDTO;
 import com.bridgelabz.springaddressbookapp.dto.ResponseDTO;
@@ -33,27 +30,27 @@ public class AddressbookController {
 	}
 	@GetMapping("/get")
 	public ResponseEntity<String>getAllData(){
-		List<AddressbookModel> listOfContacts = service.getListOfContacts();
+		List<AddressbookModel> listOfContacts = service.getListOfAddresses();
 		ResponseDTO response = new ResponseDTO("Addresbook :", listOfContacts);
 		return new ResponseEntity(response,HttpStatus.OK);
 	}
 	@PostMapping("/post")
 	public ResponseEntity<ResponseDTO> postData(@Valid @RequestBody AddressbookDTO dto) {
-		AddressbookModel newContact = service.saveDataInDB(dto);
+		AddressbookModel newContact = service.saveAddress(dto);
 		ResponseDTO response = new ResponseDTO("New Contact Added in Addressbook : ", newContact);
 		return new ResponseEntity<ResponseDTO>(response,HttpStatus.OK);
 	}
 	
 	@GetMapping("/get/{id}")
 	public  ResponseEntity<AddressbookModel> retriveData(@PathVariable Integer id){
-		ResponseDTO response = new ResponseDTO("Addressbook : ",service.getContactbyId(id));
+		ResponseDTO response = new ResponseDTO("Addressbook of given id: ",service.getAddressbyId(id));
 		return new ResponseEntity(response,HttpStatus.OK);
 	}
 	
-	@PutMapping("/put/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<ResponseDTO> updateById(@PathVariable Integer id,@Valid @RequestBody AddressbookDTO dto){
 		AddressbookModel newContact = service.updateDateById(id,dto);
-		ResponseDTO response = new ResponseDTO("Contact in Addressbook : ", newContact);
+		ResponseDTO response = new ResponseDTO("Addressbook updated : ", newContact);
 		return new ResponseEntity<ResponseDTO>(response,HttpStatus.OK);
 	}
 	

@@ -14,18 +14,18 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AddressbookDTO {
-	@Pattern(regexp = "^[A-Z]{1}[a-z A-Z]{2,}",message = "invalid name first word must be capital")
+	@Pattern(regexp = "^[A-Z]{1}[a-z A-Z]{2,}",message = "invalid first name first word must be capital")
 	private String firstName;
-	@Pattern(regexp = "^[A-Z]{1}[a-z A-Z]{2,}",message = "invalid name first word must be capital")
+	@Pattern(regexp = "^[A-Z]{1}[a-z A-Z]{2,}",message = "invalid last name first word must be capital")
 	private String lastName;
 	@Email
 	private String email;
-	@NotEmpty
-	private long phoneNumber;
-	@NotEmpty
-	private String city;
-	@NotBlank
-	private String state;
 	@NotNull
+	private long phoneNumber;
+	@NotEmpty(message = "city must be filled")
+	private String city;
+	@NotBlank(message = "state must be filled")
+	private String state;
+	@NotNull(message = "zip must be filled")
 	private Integer zip;
 }
